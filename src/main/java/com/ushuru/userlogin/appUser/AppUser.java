@@ -16,7 +16,7 @@ import java.util.Collections;
 @EqualsAndHashCode
 @NoArgsConstructor
 @Entity
-public class appUser implements UserDetails {
+public class AppUser implements UserDetails {
     @jakarta.persistence.Id
     @SequenceGenerator(
             name= "student_sequence",
@@ -32,11 +32,12 @@ private String username;
 private String name;
 private String email;
 private String password;
+@Enumerated(EnumType.STRING)
 private AppUserRole appUserRole;
 private Boolean locked;
 private Boolean enabled;
 
-    public appUser(String username, String name, String email,
+    public AppUser(String username, String name, String email,
                    String password, AppUserRole appUserRole,
                    Boolean locked,
                    Boolean enabled)
